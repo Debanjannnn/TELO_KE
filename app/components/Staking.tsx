@@ -1,10 +1,10 @@
 'use client';
 
-import { chain } from "@/app/chain";
-import { client } from "@/app/client";
+import { chain } from "../../chain";
+import { client } from "../../client";
 import { ConnectButton, TransactionButton, useActiveAccount, useReadContract } from "thirdweb/react";
 import { StakeRewards } from "./StakeRewards";
-import { NFT_CONTRACT, STAKING_CONTRACT } from "../utils/contracts";
+import { NFT_CONTRACT, STAKING_CONTRACT } from "../../utils/contracts";
 import { NFT } from "thirdweb";
 import { useEffect, useState } from "react";
 import { claimTo, getNFTs, ownerOf, totalSupply } from "thirdweb/extensions/erc721";
