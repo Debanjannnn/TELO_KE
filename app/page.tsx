@@ -21,7 +21,7 @@ export default function Home() {
       <header className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <h1 className="text-4xl font-bold text-blue-500">TELOS STAKE</h1>
+            <h1 className="text-4xl font-bold text-black">TELO-KE</h1>
           </Link>
           <nav className="hidden space-x-8 md:flex">
             <Link href="#" className="text-sm font-medium hover:text-blue-500">
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
           <div className="rounded-xl bg-orange-500 p-6">
             <h3 className="mb-4 text-xl font-bold text-white">Secure Staking</h3>
-            <p className="text-white">Your NFTs remain in your wallet while earning rewards</p>
+            <p className="text-white">Your NFTs are safely stored in our smart contract</p>
           </div>
         </div>
       </section>

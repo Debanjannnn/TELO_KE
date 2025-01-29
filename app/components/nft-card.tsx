@@ -14,7 +14,7 @@ export default function NFTCard({ image, price, apr, color }: NFTCardProps) {
       <div className={`p-4 ${color}`}>
         <div className="flex flex-col gap-2 text-white">
           <div className="flex items-center justify-between">
-            <span className="text-sm">Floor Price</span>
+            <span className="text-sm">Price</span>
             <span className="font-medium">{price} TLOS</span>
           </div>
           <div className="flex items-center justify-between">
