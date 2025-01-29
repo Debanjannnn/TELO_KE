@@ -1,11 +1,20 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Search, Wallet } from "lucide-react"
 import NFTCard from "./components/nft-card"
 import TagCloud from "./components/tag-cloud"
 
 export default function Home() {
+  const router = useRouter()
+
+  const handleConnectWallet = () => {
+    router.push("/connect")
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
@@ -28,11 +37,9 @@ export default function Home() {
               Collections
             </Link>
           </nav>
-          <Button variant="outline">
+          <Button variant="outline" onClick={handleConnectWallet}>
             <Wallet className="mr-2 h-4 w-4" />
-            <Link href="/connect">
             Connect Wallet
-            </Link>
           </Button>
         </div>
       </header>
@@ -48,7 +55,6 @@ export default function Home() {
                   image="https://i.pinimg.com/736x/77/1f/4a/771f4ab9221fb143eff98735916925ac.jpg"
                   price="4.5"
                   apr="12%"
-                  duration="30 Days"
                   color="bg-purple-500"
                 />
               </div>
@@ -57,7 +63,6 @@ export default function Home() {
                   image="https://i.pinimg.com/736x/8a/d6/56/8ad65650fb7cb706ffa9f225d3f60223.jpg"
                   price="3.6"
                   apr="15%"
-                  duration="60 Days"
                   color="bg-blue-500"
                 />
               </div>
@@ -66,7 +71,6 @@ export default function Home() {
                   image="https://i.pinimg.com/736x/83/36/60/833660b6ccd1ef8ef9407ece910b81c7.jpg"
                   price="2.2"
                   apr="18%"
-                  duration="90 Days"
                   color="bg-pink-500"
                 />
               </div>
@@ -76,30 +80,15 @@ export default function Home() {
 
         <div className="mx-auto mt-16 max-w-2xl text-center">
           <p className="text-lg leading-relaxed text-gray-600">
-            Stake your NFTs in our secure platform and earn daily TELOS rewards. Choose your staking duration, lock your
-            NFTs, and watch your rewards grow over time.
+            Stake your NFTs in our secure platform and earn daily TELOS rewards. With no lock-in period, you have the
+            freedom to stake and unstake your NFTs at any time. Start earning rewards immediately and enjoy full control
+            over your assets.
           </p>
         </div>
 
         <div className="mt-12 flex justify-center">
           <TagCloud />
         </div>
-
-        {/* Staking Stats */}
-        {/* <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-xl bg-blue-500 p-8 text-white">
-            <h3 className="text-lg font-medium">Total Value Locked</h3>
-            <p className="mt-2 text-2xl font-bold">$4.3M</p>
-          </div>
-          <div className="rounded-xl bg-blue-600 p-8 text-white">
-            <h3 className="text-lg font-medium">Average APR</h3>
-            <p className="mt-2 text-2xl font-bold">15%</p>
-          </div>
-          <div className="rounded-xl bg-pink-400 p-8 text-white">
-            <h3 className="text-lg font-medium">Total Stakers</h3>
-            <p className="mt-2 text-2xl font-bold">1,234</p>
-          </div>
-        </div> */}
       </section>
 
       {/* Staking Benefits */}
@@ -107,8 +96,8 @@ export default function Home() {
         <h2 className="text-4xl font-bold text-blue-500">STAKE YOUR NFTs AND EARN REWARDS:</h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-xl bg-purple-400 p-6">
-            <h3 className="mb-4 text-xl font-bold text-white">Flexible Duration</h3>
-            <p className="text-white">Choose staking periods from 30 to 90 days</p>
+            <h3 className="mb-4 text-xl font-bold text-white">Flexible Staking</h3>
+            <p className="text-white">No lock-in period. Stake and unstake your NFTs anytime you want.</p>
           </div>
           <div className="rounded-xl bg-white p-6 shadow-lg">
             <h3 className="mb-4 text-xl font-bold text-blue-500">Daily Rewards</h3>
@@ -116,7 +105,7 @@ export default function Home() {
           </div>
           <div className="rounded-xl bg-orange-500 p-6">
             <h3 className="mb-4 text-xl font-bold text-white">Secure Staking</h3>
-            <p className="text-white">Your NFTs are safely stored in our smart contract</p>
+            <p className="text-white">Your NFTs remain in your wallet while earning rewards</p>
           </div>
         </div>
       </section>

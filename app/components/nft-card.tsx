@@ -2,11 +2,10 @@ interface NFTCardProps {
   image: string
   price: string
   apr: string
-  duration: string
   color: string
 }
 
-export default function NFTCard({ image, price, apr, duration, color }: NFTCardProps) {
+export default function NFTCard({ image, price, apr, color }: NFTCardProps) {
   return (
     <div className="w-64 overflow-hidden rounded-xl bg-black shadow-xl">
       <div className="relative aspect-square">
@@ -23,8 +22,8 @@ export default function NFTCard({ image, price, apr, duration, color }: NFTCardP
             <span className="font-medium">{apr}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm">Lock Period</span>
-            <span className="font-medium">{duration}</span>
+            <span className="text-sm">Flexibility</span>
+            <span className="font-medium">Withdraw anytime</span>
           </div>
         </div>
       </div>
